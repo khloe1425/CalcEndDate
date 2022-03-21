@@ -2,79 +2,143 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tính EndDate</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <div class="container ">
-        <form class="w-50 mx-auto py-5">
-            <div class="mb-3">
-                <input type="date" class="form-control" id="startDate" placeholder="Ngày bắt đầu">
+  <div class="w-50 mx-auto ">
+    <div class="row">
+      <div class="col-6">
+        <form class="mx-auto py-5">
+          <div class="mb-3">
+            <input type="date" class="form-control" id="startDate" placeholder="Ngày bắt đầu">
+          </div>
+          <div class="mb-3">
+            <select class="form-select" id="total">
+              <option selected>Lớp</option>
+              <option value="48">BCFE</option>
+              <option value="38">FE</option>
+              <option value="32">JAVA</option>
+              <option value="13">Nodejs</option>
+              <option value="24">RN</option>
+              <option value="20">DS</option>
+              <option value="24">ML</option>
+              <option value="24">DL</option>
+              <option value="0">Database</option>
+              <option value="0">Golang</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="CN" name="dayOfWeek" value="0">
+              <label class="form-check-label" for="CN">CN</label>
             </div>
-            <div class="mb-3">
-                <select class="form-select" id="total">
-                    <option selected>Lớp</option>
-                    <option value="48">BCFE</option>
-                    <option value="38">FE</option>
-                    <option value="32">JAVA</option>
-                    <option value="13">Nodejs</option>
-                    <option value="24">RN</option>
-                    <option value="20">DS</option>
-                    <option value="24">ML</option>
-                    <option value="24">DL</option>
-                    <option value="0">Database</option>
-                    <option value="0">Golang</option>
-                </select>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="T2" name="dayOfWeek" value="1">
+              <label class="form-check-label" for="T2">T2</label>
             </div>
-            <div class="mb-3">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="CN" name="dayOfWeek" value="0">
-                    <label class="form-check-label" for="CN">CN</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="T2" name="dayOfWeek" value="1">
-                    <label class="form-check-label" for="T2">T2</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="T3" name="dayOfWeek" value="2">
-                    <label class="form-check-label" for="T3">T3</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="T4" name="dayOfWeek" value="3">
-                    <label class="form-check-label" for="T4">T4</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="T5" name="dayOfWeek" value="4">
-                    <label class="form-check-label" for="T5">T5</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="T6" name="dayOfWeek" value="5">
-                    <label class="form-check-label" for="T6">T6</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="T7" name="dayOfWeek" value="6">
-                    <label class="form-check-label" for="T7">T7</label>
-                  </div>
-                  
-                 
-                 
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="T3" name="dayOfWeek" value="2">
+              <label class="form-check-label" for="T3">T3</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="T4" name="dayOfWeek" value="3">
+              <label class="form-check-label" for="T4">T4</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="T5" name="dayOfWeek" value="4">
+              <label class="form-check-label" for="T5">T5</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="T6" name="dayOfWeek" value="5">
+              <label class="form-check-label" for="T6">T6</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="T7" name="dayOfWeek" value="6">
+              <label class="form-check-label" for="T7">T7</label>
             </div>
 
-            <button onclick="getEndDate()" type="button" class="btn btn-primary">Submit</button>
-            <p class="alert alert-danger" id="endDate"></p>
+
+
+          </div>
+
+          <button onclick="getEndDate()" type="button" class="btn btn-primary">Submit</button>
+          <p class="alert alert-danger" id="endDate"></p>
         </form>
+      </div>
+      <div class="col-6">
+        <form class="mx-auto py-5">
+          <div class="mb-3">
+            <input type="date" class="form-control" id="startLesson" placeholder="Ngày bắt đầu">
+          </div>
+          <div class="mb-3">
+            <select class="form-select" id="totalLesson">
+              <option selected>Buổi học</option>
+              <option value="9">HTML-CSS BC</option>
+              <option value="1">Git BC</option>
+              <option value="13">JS BC</option>
+              <option value="2">SASS</option>
+              <option value="4">ES6 BC</option>
+              <option value="19">REACT BC</option>
+              <option value="11">HTML-SASS FE</option>
+              <option value="1">Git BC</option>
+              <option value="8">JS FE</option>
+              <option value="2">ES6 FE</option>
+              <option value="16">REACT FE</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="CN" name="dayWeekLesson" value="0">
+              <label class="form-check-label" for="CN">CN</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="T2" name="dayWeekLesson" value="1">
+              <label class="form-check-label" for="T2">T2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="T3" name="dayWeekLesson" value="2">
+              <label class="form-check-label" for="T3">T3</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="T4" name="dayWeekLesson" value="3">
+              <label class="form-check-label" for="T4">T4</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="T5" name="dayWeekLesson" value="4">
+              <label class="form-check-label" for="T5">T5</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="T6" name="dayWeekLesson" value="5">
+              <label class="form-check-label" for="T6">T6</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="T7" name="dayWeekLesson" value="6">
+              <label class="form-check-label" for="T7">T7</label>
+            </div>
+
+
+
+          </div>
+
+          <button onclick="getEndDateLesson()" type="button" class="btn btn-primary">Submit</button>
+          <p class="alert alert-danger" id="endDateLesson"></p>
+        </form>
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-    <script src="./main.js"></script>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
 </body>
 
 </html>
